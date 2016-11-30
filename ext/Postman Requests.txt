@@ -1,0 +1,197 @@
+{
+	"id": "a4da795f-4e2c-c04c-7e29-a08579db6a43",
+	"name": "OAuth 2",
+	"description": "",
+	"order": [
+		"b8c7d431-c5e3-53ea-40fd-31cc3f89d091",
+		"d2e146ce-fa88-e9ea-c378-0dea2c53c17e",
+		"141db794-5f20-d241-3819-2a965fe35141",
+		"b729077b-0b3e-cab3-0e01-8232a156fac5",
+		"d26940d6-99d7-f638-4662-4dd9dc9b4204",
+		"206dd893-4a15-ce9b-3cfb-0eb1c6d5b190"
+	],
+	"folders": [],
+	"timestamp": 1458499785714,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "141db794-5f20-d241-3819-2a965fe35141",
+			"headers": "Authorization: Basic bXktY2xpZW50LWlkOnNlY3JldA==\n",
+			"url": "localhost:8080/oauth/token",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "a4da795f-4e2c-c04c-7e29-a08579db6a43",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "authorization_code",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "redirect_uri",
+					"value": "http://example.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "code",
+					"value": "bTSsyT",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "Token - Authorization Code",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1458499838230,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "206dd893-4a15-ce9b-3cfb-0eb1c6d5b190",
+			"headers": "Authorization: Basic bXktY2xpZW50LWlkOnNlY3JldA==\n",
+			"url": "localhost:8080/oauth/token",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "a4da795f-4e2c-c04c-7e29-a08579db6a43",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "scope",
+					"value": "read write",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "user",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "Token - Resource Owner Password",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1458501060437,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "b729077b-0b3e-cab3-0e01-8232a156fac5",
+			"headers": "Authorization: Basic dXNlcjpwYXNzd29yZA==\n",
+			"url": "http://localhost:8080/oauth/authorize?response_type=code&client_id=my-client-id&redirect_uri=http://example.com&scope=read%20write&state=97536",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "a4da795f-4e2c-c04c-7e29-a08579db6a43",
+			"data": null,
+			"dataMode": "params",
+			"name": "Code - Authorization Code",
+			"description": "This URL must be pasted in the browser to work.\n\nURL to get an code used in authorization_code grant type:\n\nhttp://localhost:8080/oauth/authorize?response_type=code&client_id=my-client-id&redirect_uri=http://example.com&scope=read%20write&state=97536\n\nThe state parameter is used to validate request for preventing cross-site request forgery.",
+			"descriptionFormat": "html",
+			"time": 1458500118755,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "b8c7d431-c5e3-53ea-40fd-31cc3f89d091",
+			"headers": "",
+			"url": "localhost:8080/mappings",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "a4da795f-4e2c-c04c-7e29-a08579db6a43",
+			"data": null,
+			"dataMode": "params",
+			"name": "Mappings",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1458499803596,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "d26940d6-99d7-f638-4662-4dd9dc9b4204",
+			"headers": "Authorization: Basic dXNlcjpwYXNzd29yZA==\n",
+			"url": "http://localhost:8080/oauth/authorize?response_type=code&client_id=my-client-id&redirect_uri=http://example.com&scope=read%20write&state=97536",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "a4da795f-4e2c-c04c-7e29-a08579db6a43",
+			"data": null,
+			"dataMode": "params",
+			"name": "Token - Implicit",
+			"description": "This URL must be pasted in the browser to work.",
+			"descriptionFormat": "html",
+			"time": 1458500043729,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "d2e146ce-fa88-e9ea-c378-0dea2c53c17e",
+			"headers": "Authorization: Basic bXktY2xpZW50LWlkOnNlY3JldA==\n",
+			"url": "localhost:8080/oauth/token",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "a4da795f-4e2c-c04c-7e29-a08579db6a43",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "client_credentials",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "scope",
+					"value": "read write",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "Token - Client Credentials",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1458499823471,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

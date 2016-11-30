@@ -1,0 +1,12 @@
+# H2 Connection URL: jdbc:h2:mem:testdb
+# User: sa
+
+spring.h2.console:
+  enabled: true
+  path: /console
+
+security:
+  user.password: password
+  ignored: /console/**, /mappings, /beans
+  oauth2.resource.userInfoUri: http://localhost:8080/me
+
