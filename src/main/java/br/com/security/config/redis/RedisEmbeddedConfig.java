@@ -1,25 +1,27 @@
 package br.com.security.config.redis;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
-import redis.clients.jedis.Protocol;
-import redis.embedded.RedisServer;
+import static redis.clients.jedis.Protocol.DEFAULT_HOST;
+import static redis.clients.jedis.Protocol.DEFAULT_PORT;
 
-import javax.annotation.PreDestroy;
 import java.io.IOException;
 import java.net.Socket;
 
-/**
- * Created by Matheus on 20/03/16.
- */
-//@Configuration
+import javax.annotation.PreDestroy;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+
+import redis.embedded.RedisServer;
+
+@Configuration
 public class RedisEmbeddedConfig {
 
 	private RedisServer redisServer;
 
 	@Bean
 	public JedisConnectionFactory connectionFactory() throws IOException {
-		this.redisServer = new RedisServer(Protocol.DEFAULT_PORT);
+		this.redisServer = new RedisServer(DEFAULT_PORT);
 		if (this.available()) {
 			this.redisServer.start();
 		}
@@ -27,7 +29,7 @@ public class RedisEmbeddedConfig {
 	}
 
 	private boolean available() {
-		try (final Socket socket = new Socket(Protocol.DEFAULT_HOST, Protocol.DEFAULT_PORT)) {
+		try (final Socket socket = new Socket(DEFAULT_HOST, DEFAULT_PORT)) {
 			return false;
 		} catch (final IOException e) {
 			return true;
@@ -38,5 +40,4 @@ public class RedisEmbeddedConfig {
 	void destroy() {
 		this.redisServer.stop();
 	}
-
 }

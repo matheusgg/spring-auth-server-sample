@@ -2,8 +2,6 @@ package br.com.security;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 /**
  * Ref.:
@@ -11,11 +9,9 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
  * http://callistaenterprise.se/blogg/teknik/2015/04/27/building-microservices-part-3-secure-APIs-with-OAuth/
  */
 @SpringBootApplication
-@EnableGlobalMethodSecurity(prePostEnabled = true)
-@EnableResourceServer
 public class AuthServerSampleApplication {
 
-	public static void main(final String[] args) {
+	public static void main(final String... args) {
 		SpringApplication.run(AuthServerSampleApplication.class, args);
 	}
 }
